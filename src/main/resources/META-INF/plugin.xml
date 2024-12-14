@@ -1,0 +1,32 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.medium.plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Medium-project</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="abdoxm@yourcompany.com" url="https://www.yourcompany.com">AbdoXm</vendor>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable instance="com.medium.plugin.PluginSettingsConfigurable" />
+    </extensions>
+
+    <actions>
+        <action id="MyAction"
+                class="com.medium.plugin.MyAction"
+                text="My Custom Menu Item"
+                description="This is a custom menu item">
+
+            <add-to-group group-id="EditorPopupMenu.Run" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
